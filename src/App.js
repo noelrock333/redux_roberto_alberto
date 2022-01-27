@@ -1,17 +1,22 @@
-import LoginForm from './components/LoginForm';
+import { Provider } from 'react-redux'
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
+import store from './store'
+
+import Home from './components/Home'
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route exact path="/" element={<LoginForm />} />
-      </Routes>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+        </Routes>
+      </Router>
+    </Provider>
   );
 }
 
